@@ -1,6 +1,11 @@
 #! /usr/bin/python3
 # Author: Ninad Sachania
 
+# TODO:
+#    - Move this to a class
+#    - Investigate how far can the delay can be lowered 
+#    - Add digits and punctuation marks to `letters' dict
+
 # for delay
 from time import sleep
 
@@ -18,13 +23,16 @@ GPIO.setwarnings(False)
 # pin number 
 PIN = 8
 
+# Set pin 8 on output mode (By default every GPIO pins are in input mode)
+GPIO.setup(PIN, GPIO.OUT)
+
 ditLength = 1 
 dashLength = ditLength * 3
 pauseBetweenWords = ditLength * 7
 pauseBetweenChars = ditLength * 3
 pauseBetweenElements = ditLength 
 
-# delay of 0.1 ms 
+# delay of 0.05 ms
 delay = 0.05 
 
 letters = {
@@ -59,7 +67,9 @@ letters = {
 def morseChar(char, pinNum):
     global letters
     global delay
+
     morseCode = letters[char]
+
     # TODO: Delete or comment this out
     print(morseCode)
 
@@ -89,6 +99,5 @@ def morseWords(string, pinNum):
             morseChar(char, pinNum)
 
 
-GPIO.setup(PIN, GPIO.OUT)
 
 morseWords('ninad sachania', PIN)
