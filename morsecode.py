@@ -8,11 +8,13 @@
 
 # for delay
 from time import sleep
+import sys
 
 try:
     import RPi.GPIO as GPIO
 except:
     print("Error importing RPi.GPIO.")
+    sys.exit(-1)
 
 # Use physical pin numbering
 GPIO.setmode(GPIO.BOARD)
