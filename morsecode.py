@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#! /usr/bin/env python3
 # Author: Ninad Sachania
 
 # TODO:
@@ -18,10 +18,8 @@ except ImportError:
 # Use physical pin numbering
 GPIO.setmode(GPIO.BOARD)
 
-# Ignore warnings
 GPIO.setwarnings(False)
 
-# pin number
 PIN = 8
 
 # Set pin 8 on output mode (By default every GPIO pins are in input mode)
@@ -33,7 +31,6 @@ pauseBetweenWords = 2 * dashLength
 pauseBetweenChars = dashLength
 pauseBetweenElements = ditLength
 
-# delay of 0.05 ms
 delay = 0.05
 
 letters = {
