@@ -29,8 +29,8 @@ GPIO.setup(PIN, GPIO.OUT)
 
 ditLength = 1
 dashLength = ditLength * 3
-pauseBetweenWords = ditLength * 7
-pauseBetweenChars = ditLength * 3
+pauseBetweenWords = 2 * dashLength
+pauseBetweenChars = dashLength
 pauseBetweenElements = ditLength
 
 # delay of 0.05 ms
